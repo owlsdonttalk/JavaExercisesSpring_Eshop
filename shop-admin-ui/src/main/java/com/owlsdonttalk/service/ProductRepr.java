@@ -1,42 +1,38 @@
-package com.owlsdonttalk.persist.model;
+package com.owlsdonttalk.service;
 
-import javax.persistence.*;
+import com.owlsdonttalk.persist.model.Product;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 import java.util.Set;
-import com.owlsdonttalk.persist.model.*;
 
-@Entity
-@Table(name = "products")
-public class Product {
+public class ProductRepr {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     private String name;
 
-    @Column
     private String description;
 
-    @Column
     private BigDecimal price;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "products_categories",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    private Set<CategoryRepr> categories;
 
-    public Product() {
+    public ProductRepr() {
     }
 
-    public Product(Long id, String name, String description, BigDecimal price) {
+    public ProductRepr(Long id, String name, String description, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+    }
+
+    public ProductRepr(Product product) {
+        this.id = product.getId();
+        this.name = product.getName();
+        this.description = product.getDescription();
+        this.price = product.getPrice();
     }
 
     public Long getId() {
@@ -75,7 +71,7 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
+        ProductRepr product = (ProductRepr) o;
         return id.equals(product.id);
     }
 

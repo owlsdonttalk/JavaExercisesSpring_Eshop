@@ -14,5 +14,15 @@
                 path="insert-default-users-roles.sql" />
         <rollback/>
     </changeSet>
+    <changeSet id="1617057659102-8" author="owlsdonttalk">
+        <sqlFile dbms="mysql"
+                 encoding="\nGO"
+                 relativeToChangelogFile="true"
+                 splitStatements="true"
+                 stripComments="true"
+                 path="insert-default-products-categories.sql" />
+        <rollback/>
+    </changeSet>
+
 
 </databaseChangeLog>

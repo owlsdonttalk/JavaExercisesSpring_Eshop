@@ -3,6 +3,7 @@ package com.owlsdonttalk.persist.model;
 import javax.persistence.*;
 import java.util.List;
 
+
 @Entity
 @Table(name = "categories")
 public class Category {
@@ -15,11 +16,10 @@ public class Category {
     @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "categories")
     private List<Product> products;
 
     public Category(){
-
     }
 
     public Category(String name) {
@@ -30,8 +30,15 @@ public class Category {
         this.id = id;
     }
 
-    @Id
     public String getId() {
         return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
