@@ -3,7 +3,6 @@ INSERT INTO `products` (`description`, `name`, `price`)
 GO
 
 INSERT INTO `categories` (`name`)
-    VALUE   ('laptops'),
-    VALUE   ('hats');
+    VALUE   ('laptops');
 GO
 

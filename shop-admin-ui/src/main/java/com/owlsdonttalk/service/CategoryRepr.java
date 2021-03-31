@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CategoryRepr {
 
-    private String id;
+    private Long id;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class CategoryRepr {
         this.name = category.getName();
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
