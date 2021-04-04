@@ -1,0 +1,41 @@
+<nav th:replace="fragments/header.html"/>
+
+<div class="d-flex">
+
+    <th:block th:replace="fragments/sidebar.html"/>
+
+    <div class="content p-4">
+        <h2 class="mb-4">Roles</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Role</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="role : ${roles}">
+                        <th th:text="${role.id}" scope="row">1</th>
+                        <td th:text="${role.name}">root</td>
+                        
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootadmin.min.js"></script>
+
+</body>
+</html>
