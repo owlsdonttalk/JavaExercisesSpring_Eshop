@@ -1,8 +1,10 @@
-INSERT INTO `products` (`description`, `name`, `price`)
-    VALUE   ('ProductDescription', 'ProductName', 10.0);
+INSERT INTO `categories` (`name`)
+    VALUE   ('phones'), ('laptops'), ('accessories'), ('video games'), ('books');
 GO
 
-INSERT INTO `categories` (`name`)
-    VALUE   ('laptops');
+INSERT INTO `products` (`name`, `price`, category_id)
+    VALUE   ('iPhone', 10.0,  1);
 GO
+
+
 

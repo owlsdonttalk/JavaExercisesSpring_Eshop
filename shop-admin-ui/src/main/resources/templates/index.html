@@ -1,40 +1,29 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="css/bootadmin.min.css">
+<head th:replace="fragments/header :: head"></head>
 
-    <title>BootAdmin</title>
-</head>
 <body class="bg-light">
 
-<nav th:replace="fragments/header.html"/>
-
-
-
+<nav th:replace="fragments/header :: header"></nav>
 
 <div class="d-flex">
-
-    <th:block th:replace="fragments/sidebar.html"/>
+    <div th:replace="fragments/sidebar :: sidebar"></div>
 
     <div class="content p-4">
-        <h2 class="mb-4">Welcome to E-shop Educational project.</h2>
+        <h2 class="mb-4">Blank/Starter</h2>
 
         <div class="card mb-4">
             <div class="card-body">
-                This is admin page. Use menu on the left
+                This is a blank page you can use as a starting point.
             </div>
         </div>
     </div>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/bootadmin.min.js"></script>
+<script th:replace="fragments/footer :: scripts"></script>
+<script src="https://bootadmin.net/js/datatables.min.js"></script>
 
 </body>
 </html>

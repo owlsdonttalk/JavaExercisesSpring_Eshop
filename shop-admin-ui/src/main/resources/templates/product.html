@@ -15,8 +15,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
+
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -24,9 +23,9 @@
                     <tr th:each="product : ${products}">
                         <th th:text="${product.id}" scope="row">1</th>
                         <td th:text="${product.name}">root</td>
-                        <td th:text="${product.description}">root</td>
-                        <td th:text="${product.price}">root</td>
-
+                        <td>
+                            <a class="btn btn-success" th:href="@{/product/{id}/edit(id = ${product.id})}"><i class="fas fa-edit"></i></a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

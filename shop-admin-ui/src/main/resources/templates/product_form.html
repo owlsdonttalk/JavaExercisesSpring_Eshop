@@ -1,0 +1,25 @@
+<nav th:replace="fragments/header.html"/>
+
+<div class="d-flex">
+
+    <th:block th:replace="fragments/sidebar.html"/>
+
+    <div class="content p-4">
+        <h2 class="mb-4" th:if="${edit}">Edit product</h2>
+        <h2 class="mb-4" th:if="${create}">Create product</h2>
+
+        <div class="card mb-4">
+            <div class="card-body">
+
+                <table>
+
+
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
