@@ -1,5 +1,6 @@
 package com.owlsdonttalk.service;
 
+import com.owlsdonttalk.persist.model.Category;
 import com.owlsdonttalk.persist.model.Product;
 
 import java.math.BigDecimal;
@@ -16,6 +17,8 @@ public class ProductRepr {
 
     private Set<CategoryRepr> categories;
 
+    private Category category;
+
     public ProductRepr() {
     }
 
@@ -29,6 +32,7 @@ public class ProductRepr {
         this.id = product.getId();
         this.name = product.getName();
         this.price = product.getPrice();
+        this.category = product.getCategory();
     }
 
     public Long getId() {
@@ -45,6 +49,14 @@ public class ProductRepr {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public BigDecimal getPrice() {

@@ -1,10 +1,12 @@
 package com.owlsdonttalk.service;
 
 
+import com.owlsdonttalk.error.NotFoundException;
 import com.owlsdonttalk.persist.model.Product;
 import com.owlsdonttalk.persist.repo.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,9 +42,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void save(ProductRepr product) throws IOException {
+    @Transactional
+    public void save(ProductRepr productRepr) throws IOException {
+        Product product = (productRepr.getId() != null) ? productRepository.findById(productRepr.getId())
+                .orElseThrow(NotFoundException::new) : new Product();
+        product.setName(productRepr.getName());
+        product.setCategory(productRepr.getCategory());
+        product.setPrice(productRepr.getPrice());
 
+        productRepository.save(product);
     }
-
 
 }

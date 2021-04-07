@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -26,7 +25,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/user")
     public String userPage(Model model){
         logger.info("Admin user page request");
         List<UserRepr> users = userService.findAll();
@@ -34,7 +33,7 @@ public class UserController {
         return "user";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     public String editPage(@PathVariable("id") Long id, Model model) {
         logger.info("Edit page for id {} requested", id);
 
