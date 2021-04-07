@@ -34,10 +34,10 @@ public class CategoryController {
         return "category";
     }
 
-    @GetMapping("/category/{id}/")
+    @GetMapping("/category/{id}")
     public String browseCategory(Model model, @PathVariable("id") Long id) {
-
+        logger.info("Category page with id " + id + " requested");
         model.addAttribute("category", categoryService.findById(id).orElseThrow(IllegalStateException::new));
-        return "category_form";
+        return "category";
     }
 }
