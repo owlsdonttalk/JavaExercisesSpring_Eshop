@@ -37,6 +37,8 @@ public class CategoryController {
     @GetMapping("/category/{id}")
     public String browseCategory(Model model, @PathVariable("id") Long id) {
         logger.info("Category page with id " + id + " requested");
+        List<CategoryRepr> categories = categoryService.findAll();
+        model.addAttribute("categories", categories);
         model.addAttribute("category", categoryService.findById(id).orElseThrow(IllegalStateException::new));
         return "category";
     }
