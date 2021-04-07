@@ -48,6 +48,14 @@ public class ProductController {
         return "product_form";
     }
 
+    @GetMapping("/product/create")
+    public String adminCreateProduct(Model model) {
+        model.addAttribute("create", true);
+        model.addAttribute("product", new ProductRepr());
+        model.addAttribute("categories", categoryService.findAll());
+        return "product_form";
+    }
+
     @PostMapping("/product")
     public String adminEditProduct(Model model, RedirectAttributes redirectAttributes, ProductRepr product) {
 
