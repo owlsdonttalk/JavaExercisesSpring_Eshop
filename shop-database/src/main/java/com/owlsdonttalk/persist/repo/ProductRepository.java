@@ -9,6 +9,9 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findAll();
 
-    @Query("select p from Product p left join fetch p.pictures")
+    @Query("select distinct p " +
+            "from Product p " +
+            "left join fetch p.pictures " +
+            "inner join fetch p.category ")
     List<Product> findAllWithPictureFetch();
 }
