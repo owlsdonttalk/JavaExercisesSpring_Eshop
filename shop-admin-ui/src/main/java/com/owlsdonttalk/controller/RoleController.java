@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/role")
 public class RoleController {
 
     private static final Logger logger = LoggerFactory.getLogger(RoleController.class);
@@ -27,7 +26,7 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    @GetMapping
+    @GetMapping("/role")
     public String rolePage(Model model){
         logger.info("Admin role page request");
         List<RoleRepr> roles = roleService.findAll();

@@ -7,16 +7,19 @@
     <div class="content p-4">
         <h2 class="mb-4">Products</h2>
 
+        <form class="form-inline" th:action="@{/product/create}">
+            <button type="submit" class="btn btn-primary mb-2">New</button>
+        </form>
+
         <div class="card mb-4">
             <div class="card-body">
 
-                <table>
+                <table class="table">
                     <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
-                        <th>Description</th>
-                        <th>Price</th>
+                        <th>Category</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -24,9 +27,10 @@
                     <tr th:each="product : ${products}">
                         <th th:text="${product.id}" scope="row">1</th>
                         <td th:text="${product.name}">root</td>
-                        <td th:text="${product.description}">root</td>
-                        <td th:text="${product.price}">root</td>
-
+                        <td th:text="${product.category.getName()}">root</td>
+                        <td>
+                            <a class="btn btn-success" th:href="@{/product/{id}/edit(id = ${product.id})}"><i class="fas fa-edit"></i></a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>

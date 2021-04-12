@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/category")
 public class CategoryController {
 
     private static final Logger logger = LoggerFactory.getLogger(RoleController.class);
@@ -25,7 +24,7 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping
+    @GetMapping("/category")
     public String categoryPage(Model model){
         logger.info("Admin category page request");
         List<CategoryRepr> categories = categoryService.findAll();
