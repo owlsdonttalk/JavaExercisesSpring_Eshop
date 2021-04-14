@@ -2,7 +2,6 @@ package com.owlsdonttalk.service;
 
 import com.owlsdonttalk.persist.model.Category;
 import com.owlsdonttalk.persist.model.Product;
-import service.PictureRepr;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;

@@ -1,7 +1,9 @@
 package com.owlsdonttalk.controller;
 
+import com.owlsdonttalk.error.NotFoundException;
 import com.owlsdonttalk.service.CategoryRepr;
 import com.owlsdonttalk.service.CategoryService;
+import com.owlsdonttalk.service.ProductRepr;
 import com.owlsdonttalk.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +34,7 @@ public class ProductController {
         logger.info("Product page with id " + id + " requested");
         List<CategoryRepr> categories = categoryService.findAll();
         model.addAttribute("categories", categories);
+        model.addAttribute("product", productService.findById(id).orElseThrow(NotFoundException::new));
         return "product";
     }
 }

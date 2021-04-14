@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface ProductService {
     List<ProductRepr> findAll();
 
-    Optional<Product> findById(Long id);
+    Optional<ProductRepr> findById(Long id);
 
     void deleteById(Long id);
 
