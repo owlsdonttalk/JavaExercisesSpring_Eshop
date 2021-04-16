@@ -1,9 +1,9 @@
 package com.owlsdonttalk.shopui.controller;
 
-import com.owlsdonttalk.admin.error.NotFoundException;
 import com.owlsdonttalk.admin.service.CategoryRepr;
 import com.owlsdonttalk.admin.service.CategoryService;
 import com.owlsdonttalk.admin.service.ProductService;
+import com.owlsdonttalk.shopui.error.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
