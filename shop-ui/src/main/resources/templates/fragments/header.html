@@ -12,9 +12,10 @@
     <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
-</head>
-<body>
 
+</head>
+
+<body>
 <!-- Menu -->
 
 <div th:fragment="header" class="menu">
@@ -35,7 +36,7 @@
     <!-- Contact Info -->
     <div class="menu_contact">
         <div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-            <div><div><img src="/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
+            <div><div><img src="/images/phone.svg"></div></div>
             <div>+1 912-252-7350</div>
         </div>
         <div class="menu_social">
@@ -48,5 +49,43 @@
         </div>
     </div>
 </div>
+
+<header th:fragment="header-menu" class="header">
+    <div class="header_overlay"></div>
+    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+        <div class="logo">
+            <a th:href="@{/}">
+                <div class="d-flex flex-row align-items-center justify-content-start">
+                    <div><img src="/images/logo_1.png" alt=""></div>
+                    <div>Little Closet</div>
+                </div>
+            </a>
+        </div>
+        <div class="hamburger"><i class="fa fa-bars"></i></div>
+        <nav class="main_nav">
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li th:each="cat : ${categories}" ><a th:href="@{/category/{id}(id = ${cat.id})}" th:text="${cat.name}"></a></li>
+            </ul>
+        </nav>
+        <div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
+            <!-- Search -->
+            <div class="header_search">
+                <form action="#" id="header_search_form">
+                    <input type="text" class="search_input" placeholder="Search Item" required="required">
+                    <button class="header_search_button"><img src="/images/search.png" alt=""></button>
+                </form>
+            </div>
+            <!-- Cart -->
+            <div class="cart"><a th:href="@{/cart/}"><div><img class="svg" src="/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"></div></a></div>
+            <!-- Phone -->
+            <div class="header_phone d-flex flex-row align-items-center justify-content-start">
+                <div><div><img src="/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
+                <div>+1 912-252-7350</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
 </body>
 </html>
