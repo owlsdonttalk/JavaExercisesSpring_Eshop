@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-@Scope(scopeName = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CartServiceImpl implements CartService, Serializable {
 
     private final Map<LineItem, Integer> lineItems;
@@ -63,7 +62,7 @@ public class CartServiceImpl implements CartService, Serializable {
 
     @Override
     public void updateAllQty(Map<Long, Integer> productIdQtyMap) {
-        // TODO
+
     }
 
     @JsonIgnore

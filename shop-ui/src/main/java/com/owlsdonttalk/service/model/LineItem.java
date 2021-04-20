@@ -13,7 +13,6 @@ public class LineItem implements Serializable {
 
     private Integer qty;
 
-
     public LineItem(ProductRepr productRepr) {
         this.productId = productRepr.getId();
         this.productRepr = productRepr;
