@@ -47,11 +47,10 @@ public class CartController {
     }
 
     @GetMapping("/{id}/addProduct")
-    public String addOneMore(@PathVariable("id") Long id){
+    public String addOneMore(@PathVariable("id") Long id, Model model){
         ProductRepr productRepr = productService.findById(id)
                 .orElseThrow(NotFoundException::new);
         cartService.addProductQty(productRepr, 1);
-
         return "redirect:/cart";
     }
 

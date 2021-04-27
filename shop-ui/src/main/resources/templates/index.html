@@ -59,16 +59,13 @@
 											<div><div><img src="images/heart_2.svg" class="svg" alt=""><div>+</div></div></div>
 										</div>
 										<div class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center">
-											<div><div><img src="/images/cart.svg" class="svg" alt=""><div>
-												<form class="quantity" th:method="post" th:action="@{/cart}">
-													<input type="hidden" name="productId" th:value="${prod.id}">
-													<div class="custom">
-													</div>
-													<button type="submit" class="product_button product_cart text-center d-flex flex-column align-items-center justify-content-center" style=""> + </button>
-												</form>
-
-
-											</div></div></div>
+											<div>
+												<div>
+												<a th:href="@{/cart/{id}/addProduct(id=${prod.id})}">
+												<img src="/images/cart.svg" class="svg" alt="">
+												</a>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

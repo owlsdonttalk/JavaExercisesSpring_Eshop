@@ -73,7 +73,7 @@
 										<div class="product_price product_text"><span>Price: </span>$[[${lineItem.productRepr.price}]]</div>
 										<div class="product_quantity_container">
 											<div class="product_quantity ml-lg-auto mr-lg-auto text-center">
-												<span class="product_text product_num"  th:name="${lineItem.productId}" th:value="${lineItem.qty}">1</span>
+												<span class="product_text product_num"  th:name="${lineItem.productId}" th:text="${lineItem.qty}"></span>
 												<div class="qty_sub qty_button trans_200 text-center"><span><a th:href="@{/cart/{id}/removeProduct((id=${lineItem.getProductId()}))}">-</a></span></div>
 												<div class="qty_add qty_button trans_200 text-center"><span><a th:href="@{/cart/{id}/addProduct((id=${lineItem.getProductId()}))}">-</a></span></div>
 											</div>
@@ -146,7 +146,7 @@
 								<ul class="cart_extra_total_list">
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Subtotal</div>
-										<div class="cart_extra_total_value ml-auto">$29.90</div>
+										<div class="cart_extra_total_value ml-auto" th:text="${totalPrice}">$29.90</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
 										<div class="cart_extra_total_title">Shipping</div>

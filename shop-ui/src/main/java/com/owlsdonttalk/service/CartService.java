@@ -1,6 +1,5 @@
 package com.owlsdonttalk.service;
 
-import com.owlsdonttalk.service.ProductRepr;
 import com.owlsdonttalk.service.model.LineItem;
 
 import java.math.BigDecimal;

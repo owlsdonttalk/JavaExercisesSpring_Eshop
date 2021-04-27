@@ -18,7 +18,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@Scope(scopeName = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class CartServiceImpl implements CartService, Serializable {
+
+
 
     private final Map<LineItem, Integer> lineItems;
 
